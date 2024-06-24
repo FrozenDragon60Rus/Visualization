@@ -31,6 +31,7 @@ namespace Visualization
                 book = excel.Workbooks.Open(Directory.GetCurrentDirectory() + @"\" + fileName);
             else
                 book = excel.Workbooks.Add(Type.Missing);
+
             book.AfterSave += new WorkbookEvents_AfterSaveEventHandler(AfterSave);
             //Console.WriteLine(Directory.GetCurrentDirectory() + @"\" + fileName);
             sheet = book.Sheets["Лист1"];

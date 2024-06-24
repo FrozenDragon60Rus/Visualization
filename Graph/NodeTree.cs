@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 
 namespace Visualization.Graph
 {
@@ -70,9 +67,11 @@ namespace Visualization.Graph
         }
         public void AddChildren(Vector2 position, float path)
         {
-            Node node = new Node(position, path);
-            node.parent = this;
-            children.Add(node);
+			var node = new Node(position, path)
+			{
+				parent = this
+			};
+			children.Add(node);
         }
         public void AddChildren(Node node)
         {
